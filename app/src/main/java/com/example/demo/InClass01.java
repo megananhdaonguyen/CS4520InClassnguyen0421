@@ -49,6 +49,8 @@ public class InClass01 extends AppCompatActivity {
 
                 if (valueWeight.isEmpty() || valueFeet.isEmpty() || valueInches.isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Text Box Empty",Toast.LENGTH_LONG).show();
+                } else if (Float.parseFloat(valueWeight) < 0 || Float.parseFloat(valueFeet) < 0|| Float.parseFloat(valueInches) < 0) {
+                    Toast.makeText(getApplicationContext(), "Cannot Input Negative Numbers",Toast.LENGTH_LONG).show();
                 } else {
                     weight = Float.parseFloat(valueWeight);
                     feet = Float.parseFloat(valueFeet);
