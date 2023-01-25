@@ -26,7 +26,7 @@ public class InClass01 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculate_bmi);
-        setTitle("Calculate BMI");
+        setTitle("BMI Calculator");
 
         text_Result = findViewById(R.id.text_result);
         condition_Output = findViewById(R.id.condition_output);
