@@ -9,16 +9,23 @@
         android:id="@+id/button_log"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="162dp"
         android:text="Log"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="161dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_Toast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="111dp"
+        android:layout_marginEnd="162dp"
         android:text="toast"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="191dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_log" />
 </androidx.constraintlayout.widget.ConstraintLayout>

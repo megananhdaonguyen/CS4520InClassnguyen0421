@@ -34,7 +34,7 @@ public class PracticeActivity extends AppCompatActivity {
         button_toast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(new PracticeActivity(), "Now push to Github and Submit!",Toast.LENGTH_LONG);
+                Toast.makeText(getApplicationContext(), "Now push to Github and Submit!",Toast.LENGTH_LONG).show();
 
             }
         });

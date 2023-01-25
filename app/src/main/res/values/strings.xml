@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Demo</string>
+    <string name="calc_bmi">Calculate BMI</string>
+    <string name="feet">feet</string>
+    <string name="inches">inches</string>
+    <string name="weighthint">Your weight in pounds</string>
 </resources>

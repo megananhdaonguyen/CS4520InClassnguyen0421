@@ -20,6 +20,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".PracticeActivity"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.demo.PracticeActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".InClass01"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.demo.InClass01" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
