@@ -3,11 +3,7 @@ plugins {
 }
 
 android {
-    signingConfigs {
-        debug {
-            storeFile file('/Users/megananhdao/Desktop/PracticeKeystore')
-        }
-    }
+
     namespace 'com.example.demo'
     compileSdk 33
 
