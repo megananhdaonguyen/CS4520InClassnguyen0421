@@ -24,7 +24,7 @@ public class PracticeActivity extends AppCompatActivity {
         button_log.setOnClickListener(new View.OnClickListener() {
            @Override
             public void onClick(View view) {
-               Log.d(TAG, "Practice!Practice!Practice!");
+              // Log.d(TAG, "Practice!Practice!Practice!");
 
            }
         });

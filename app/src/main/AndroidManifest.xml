@@ -41,6 +41,36 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".InClass02"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.demo.InClass02" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SelectAvatar"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.demo.SelectAvatar" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".DisplayActivity"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.demo.DisplayActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
