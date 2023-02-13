@@ -22,6 +22,8 @@ public class SelectAvatarFragment extends Fragment {
 
     private IfromFragmentToActivity fromSelectAvatarToActivity;
 
+    public SelectAvatarFragment() {
+    }
     public static SelectAvatarFragment newInstance() {
         SelectAvatarFragment fragment = new SelectAvatarFragment();
         Bundle args = new Bundle();

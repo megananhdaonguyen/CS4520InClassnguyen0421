@@ -37,7 +37,6 @@ public class EditProfileFragment extends Fragment {
     private int new_Display_Avatar = R.drawable.avatar_icon;
 
     public EditProfileFragment() {
-        // Required empty public constructor
     }
 
     public static EditProfileFragment newInstance() {

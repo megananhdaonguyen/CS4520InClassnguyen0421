@@ -81,36 +81,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".EditProfileFragment"
-            android:label="Preferences"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.example.demo.EditProfileFragment" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".SelectAvatarFragment"
-            android:label="Preferences"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.example.demo.SelectAvatarFragment" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".DisplayActivityFragment"
-            android:label="Preferences"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.example.demo.DisplayActivityFragment" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
     </application>
 
 </manifest>

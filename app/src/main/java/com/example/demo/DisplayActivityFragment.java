@@ -25,7 +25,6 @@ public class DisplayActivityFragment extends Fragment{
     private Button button_Back;
 
     public DisplayActivityFragment() {
-        // Required empty public constructor
     }
 
     public static DisplayActivityFragment newInstance(User user) {
