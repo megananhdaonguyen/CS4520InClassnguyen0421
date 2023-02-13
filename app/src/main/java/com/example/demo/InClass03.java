@@ -6,6 +6,8 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+// Megan Nguyen
+// InClass03
 public class InClass03 extends AppCompatActivity implements IfromFragmentToActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
