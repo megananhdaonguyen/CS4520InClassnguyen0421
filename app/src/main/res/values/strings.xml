@@ -14,4 +14,8 @@
     <string name="display_name">Name: </string>
     <string name="display_email">Email: </string>
     <string name="button_back">Back</string>
+    <string name="InClass03">InCLass03</string>
+    <string name="InClass02">InClass02</string>
+    <string name="InClass01">InClass01</string>
+    <string name="Practice">Practice</string>
 </resources>
