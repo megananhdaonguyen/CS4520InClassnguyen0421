@@ -12,7 +12,7 @@ public class HeavyWork implements Runnable{
     public final static int STATUS_END = 0x003;
     public final static String KEY_PROGRESS = "0x004";
     public final static String KEY_RESULT = "0x005";
-    static final int COUNT = 100;
+    static final int COUNT = 9000000;
     private int complexity;
     private Handler messageQueue;
     private int nVal;
@@ -44,7 +44,8 @@ public class HeavyWork implements Runnable{
             Message progressMessage = new Message();
             progressMessage.what = STATUS_PROGRESS;
             Bundle bundleProgress = new Bundle();
-            getNumProgress = i/nVal;
+            getNumProgress = i/90000;
+            getNumProgress = getNumProgress/nVal;
             bundleProgress.putInt(KEY_PROGRESS, (currentProgress + getNumProgress));
             progressMessage.setData(bundleProgress);
             messageQueue.sendMessage(progressMessage);
