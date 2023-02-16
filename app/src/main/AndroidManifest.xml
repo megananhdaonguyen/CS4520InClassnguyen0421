@@ -81,6 +81,16 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".InClass04"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.demo.InClass04" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
