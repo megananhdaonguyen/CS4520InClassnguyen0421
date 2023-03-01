@@ -20,4 +20,8 @@
     <string name="Practice">Practice</string>
     <string name="InClass04">InClass04</string>
     <string name="generate_number">Generate Number</string>
+    <string name="InClass05">InClass05</string>
+    <string name="search_keyword">Search Keyword</string>
+    <string name="go">Go</string>
+    <string name="loading">Loading</string>
 </resources>
