@@ -107,6 +107,16 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".InClass06"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.demo.InClass06" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

@@ -24,4 +24,8 @@
     <string name="search_keyword">Search Keyword</string>
     <string name="go">Go</string>
     <string name="loading">Loading</string>
+    <string name="InClass06">InClass06</string>
+    <string name="Choose_Category">Choose Category</string>
+    <string name="choose_country">Choose Country</string>
+    <string name="News">News</string>
 </resources>
