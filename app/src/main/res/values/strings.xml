@@ -28,4 +28,17 @@
     <string name="Choose_Category">Choose Category</string>
     <string name="choose_country">Choose Country</string>
     <string name="News">News</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_register">Register</string>
+    <string name="text_login">Login</string>
+    <string name="have_account">Have Account</string>
+    <string name="button_register">Register</string>
+    <string name="button_login">Login</string>
+    <string name="hint_note">Note</string>
+    <string name="textview_notes">Note: </string>
+    <string name="Name">Name</string>
+    <string name="display_emaill">email</string>
+    <string name="inclass07">InClass07</string>
 </resources>

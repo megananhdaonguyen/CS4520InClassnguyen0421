@@ -33,6 +33,18 @@
         app:layout_constraintTop_toBottomOf="@+id/button_Practice" />
 
     <Button
+        android:id="@+id/button_InClass07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginEnd="145dp"
+        android:text="@string/inclass07"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="34dp" />
+
+    <Button
         android:id="@+id/button_InClass06"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
