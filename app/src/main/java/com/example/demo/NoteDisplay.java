@@ -27,7 +27,6 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okhttp3.OkHttpClient;
 
-
 public class NoteDisplay extends AppCompatActivity implements AddFragment.IaddButtonAction {
 
     private RecyclerView recyclerView;
@@ -38,10 +37,10 @@ public class NoteDisplay extends AppCompatActivity implements AddFragment.IaddBu
     private String token;
     private OkHttpClient client;
     private TextView textView_name, textView_email;
+    private Button buttonLogout;
     private static class TextKey {
         final static String text = "email";
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +49,7 @@ public class NoteDisplay extends AppCompatActivity implements AddFragment.IaddBu
         textView_email = findViewById(R.id.textView_email);
         textView_name = findViewById(R.id.textView_name);
         recyclerView = findViewById(R.id.recyclerReview);
+        buttonLogout = findViewById(R.id.button_logout);
         recyclerViewLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(recyclerViewLayoutManager);
         client = new OkHttpClient();
@@ -60,27 +60,23 @@ public class NoteDisplay extends AppCompatActivity implements AddFragment.IaddBu
 
         meURL = HttpUrl.parse("http://ec2-54-164-201-39.compute-1.amazonaws.com:3000/api/auth/me")
                 .newBuilder()
-                .addQueryParameter("x-access-token", token)
                 .build();
 
         logoutURL = HttpUrl.parse("http://ec2-54-164-201-39.compute-1.amazonaws.com:3000/api/auth/logout")
                 .newBuilder()
-                .addQueryParameter("x-access-token", token)
                 .build();
 
         getallURL = HttpUrl.parse("http://ec2-54-164-201-39.compute-1.amazonaws.com:3000/api/note/getall")
                 .newBuilder()
-                .addQueryParameter("x-access-token", token)
                 .build();
 
         postURL = HttpUrl.parse("http://ec2-54-164-201-39.compute-1.amazonaws.com:3000/api/note/post")
                 .newBuilder()
-                .addQueryParameter("x-access-token", token)
                 .build();
 
-        System.out.println("token:" + token);
         Request requestProfile = new Request.Builder()
                 .url(meURL)
+                .header("x-access-token", token)
                 .build();
 
         client.newCall(requestProfile).enqueue(new Callback() {
@@ -115,6 +111,7 @@ public class NoteDisplay extends AppCompatActivity implements AddFragment.IaddBu
 
         Request request = new Request.Builder()
                 .url(getallURL)
+                .header("x-access-token", token)
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
@@ -137,6 +134,7 @@ public class NoteDisplay extends AppCompatActivity implements AddFragment.IaddBu
                 }
                 if (response.isSuccessful()) {
                     Gson gsonData = new Gson();
+                    notes = new Notes();
                     notes = gsonData.fromJson(response.body().charStream(), Notes.class);
                     runOnUiThread(new Runnable() {
                         @Override
@@ -155,6 +153,46 @@ public class NoteDisplay extends AppCompatActivity implements AddFragment.IaddBu
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.containerAddEdit, AddFragment.newInstance(), "addFragment")
                 .commit();
+
+
+        buttonLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Request requestProfile = new Request.Builder()
+                        .url(logoutURL)
+                        .build();
+
+                client.newCall(requestProfile).enqueue(new Callback() {
+                    @Override
+                    public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    @Override
+                    public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                        if (!response.isSuccessful()) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(NoteDisplay.this, "Logout Error", Toast.LENGTH_LONG).show();
+                                }
+                            });
+                        }
+                        if (response.isSuccessful()) {
+                            Gson gsonData = new Gson();
+                            LogOut logoutInfo = gsonData.fromJson(response.body().charStream(), LogOut.class);
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(NoteDisplay.this, "Logged out", Toast.LENGTH_LONG).show();
+                                    token = new String();
+                                }
+                            });
+                        }
+                    }
+                });
+            }
+        });
     }
     @Override
     public void addButtonClicked(String noteText) {
@@ -165,6 +203,7 @@ public class NoteDisplay extends AppCompatActivity implements AddFragment.IaddBu
                 .build();
         Request requestAdd = new Request.Builder()
                 .url(postURL)
+                .header("x-access-token", token)
                 .post(formBody)
                 .build();
 
@@ -181,19 +220,21 @@ public class NoteDisplay extends AppCompatActivity implements AddFragment.IaddBu
                     ResponseBody responseBody = response.body();
                     String body = responseBody.string();
                     AddNote newNote = gsonData.fromJson(body, AddNote.class);
+                    Note textNote = newNote.getNote();
+                    textNote.setText(noteText);
 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            notes.getNoteArrayList().add(newNote.getNote());
+                            ArrayList<Note> newNotes = notes.getNoteArrayList();
+                            newNotes.add(textNote);
+                            notes.setNoteArrayList(newNotes);
                         }
                     });
-
                 } else {
                     throw new IOException("Unexpected code " + response);
                 }
             }
         });
     }
-
 }

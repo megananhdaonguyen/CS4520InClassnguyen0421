@@ -5,22 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.demo.NoteDisplay;
-import com.example.demo.SignIn;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -65,7 +61,7 @@ public class InClass07 extends AppCompatActivity {
         textView_login = findViewById(R.id.textView_login);
         textView_haveAccount = findViewById(R.id.textView_haveAccount);
         editText_name = findViewById(R.id.editText_name);
-        editText_email = findViewById(R.id.editText_email);
+        editText_email = findViewById(R.id.editText_Email3);
         editText_password = findViewById(R.id.editText_password);
         editText_loginEmail = findViewById(R.id.editText_loginEmail);
         editText_loginPass = findViewById(R.id.editText_loginPass);
@@ -124,8 +120,6 @@ public class InClass07 extends AppCompatActivity {
                 .post(formBody)
                 .build();
 
-        Log.d("demo", "'requestBody: : " + request);
-
         this.client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
@@ -139,7 +133,6 @@ public class InClass07 extends AppCompatActivity {
                     Gson gsonData = new Gson();
                     ResponseBody responseBody = response.body();
                     String body = responseBody.string();
-                    Log.d("demo", "onResponse: " + body);
                     //SignIn signIn = gsonData.fromJson(body, SignIn.class);
                     try {
                         JSONObject json = new JSONObject(body);
@@ -154,7 +147,6 @@ public class InClass07 extends AppCompatActivity {
                             sendToNotesDisplay();
                         }
                     });
-                    System.out.println("hi");
 
                 } else {
                     throw new IOException("Unexpected code " + response);

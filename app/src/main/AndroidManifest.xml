@@ -122,7 +122,7 @@
             android:label="Preferences"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.example.demo.InClass06" />
+                <action android:name="com.example.demo.InClass07" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -133,6 +133,16 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.example.demo.NoteDisplay" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".InClass08"
+            android:label="Preferences"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.demo.InClass08" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

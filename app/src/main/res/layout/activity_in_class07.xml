@@ -38,10 +38,10 @@
         android:hint="@string/hint_password"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_email" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_Email3" />
 
     <EditText
-        android:id="@+id/editText_email"
+        android:id="@+id/editText_Email3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"

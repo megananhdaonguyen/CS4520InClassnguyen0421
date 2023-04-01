@@ -6,6 +6,7 @@ public class Notes {
     private ArrayList<Note> noteArrayList;
 
     public Notes() {
+        noteArrayList = new ArrayList<Note>();
     }
 
     public Notes(ArrayList<Note> noteArrayList) {

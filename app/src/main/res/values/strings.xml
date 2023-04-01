@@ -41,4 +41,15 @@
     <string name="Name">Name</string>
     <string name="display_emaill">email</string>
     <string name="inclass07">InClass07</string>
+    <string name="logout">Logout</string>
+    <string name="InClass08">InClass08</string>
+    <string name="register">Register</string>
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="displayName">Display Name</string>
+    <string name="password">Password</string>
+    <string name="reenterPassword">Re-Enter Password</string>
+    <string name="Welcome">WELCOME</string>
+    <string name="welcome">Welcome!</string>
+    <string name="welcomeMessage">Hi! We\'re excited to have you</string>
 </resources>

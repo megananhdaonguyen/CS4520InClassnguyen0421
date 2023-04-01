@@ -1,7 +1,6 @@
 package com.example.demo;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,7 +60,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.textViewNotes = itemView.findViewById(R.id.textView_note);
+            this.textViewNotes = itemView.findViewById(R.id.textViewNote);
             this.buttonDelete = itemView.findViewById(R.id.buttonDelete);
         }
 
@@ -96,7 +95,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
             public void onClick(View view) {
 
                 url = HttpUrl.parse("http://ec2-54-164-201-39.compute-1.amazonaws.com:3000/api/note/delete").newBuilder()
-                        .addQueryParameter("x-access-token", token)
                         .build();
 
                 RequestBody formBody = new FormBody.Builder()
@@ -104,6 +102,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
                         .build();
                 Request requestAdd = new Request.Builder()
                         .url(url)
+                        .header("x-access-token", token)
                         .post(formBody)
                         .build();
 
