@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,7 +49,6 @@ public class FragmentNewChatSelectFriend extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_new_chat_select_friend, container, false);
 //        remove the currentUser from users array list...
         users.remove(currentUser);
-        Log.d(Tags.TAG, "Current users: "+users.toString());
         recyclerViewFriends = rootView.findViewById(R.id.recyclerViewFriends);
         recyclerViewFriendsLayoutManager = new LinearLayoutManager(getContext());
         friendsAdapter = new FriendsAdapter(users,getContext());

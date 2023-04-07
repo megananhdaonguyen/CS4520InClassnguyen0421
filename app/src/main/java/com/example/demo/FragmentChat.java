@@ -11,7 +11,6 @@ import static androidx.core.content.ContextCompat.getSystemService;
         import androidx.recyclerview.widget.LinearLayoutManager;
         import androidx.recyclerview.widget.RecyclerView;
 
-        import android.util.Log;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
@@ -174,7 +173,6 @@ public class FragmentChat extends Fragment {
             @Override
             public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                 if(error!=null){
-                    Log.e(Tags.TAG, "onEvent: "+ error.getMessage());
                 }else{
                     messages.clear();
                     for(DocumentSnapshot documentSnapshot: value.getDocuments()){
@@ -186,7 +184,6 @@ public class FragmentChat extends Fragment {
                             return (int) ((t1.getTime()-t2.getTime()));
                         }
                     });
-                    Log.d(Tags.TAG, "onEvent: "+messages);
                     recyclerViewChatAdapter.notifyDataSetChanged();
                 }
             }

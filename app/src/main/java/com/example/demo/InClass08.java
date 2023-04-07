@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -110,14 +109,12 @@ public class InClass08 extends AppCompatActivity implements IconnectToActivity {
                     @Override
                     public void onSuccess(Void unused) {
 //                      On success populate home screen...
-                        Log.d(Tags.TAG, "onSuccess: updated data");
                         populateScreen();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.e(Tags.TAG, "onFailure: "+e.getMessage());
                     }
                 });
     }
@@ -146,7 +143,6 @@ public class InClass08 extends AppCompatActivity implements IconnectToActivity {
 
 //        Generate a unique value for the list of users in this chat...
         String uIDforChat = Utils.generateUniqueID(chatEmails);
-        Log.d(Tags.TAG, "UUID: "+uIDforChat);
 
 //        Fetch the collection of chat records from users tree for current user...
         DocumentReference chatDocRefInChatsTree = db.collection("users")
@@ -172,7 +168,6 @@ public class InClass08 extends AppCompatActivity implements IconnectToActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.e(Tags.TAG, "onFailure: "+ e.getMessage() );
                     }
                 });
 
@@ -226,7 +221,6 @@ public class InClass08 extends AppCompatActivity implements IconnectToActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.e(Tags.TAG, "onFailure: "+ e.getMessage() );
                     }
                 });
     }

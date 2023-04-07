@@ -6,7 +6,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -81,7 +80,6 @@ public class FragmentLogin extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if(view.getId() == R.id.buttonLogin){
-            Log.d("demo", "onClick: Login");
             userEmail = editTextEmail.getText().toString().trim();
             password = editTextPassword.getText().toString().trim();
             if(userEmail.equals("")){
@@ -117,7 +115,6 @@ public class FragmentLogin extends Fragment implements View.OnClickListener {
             }
 
         }else if(view.getId()== R.id.buttonOpenRegister){
-            Log.d("demo", "onClick: Register");
             mListener.populateRegisterFragment();
         }
     }
